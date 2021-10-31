@@ -57,7 +57,7 @@ async def on_message(message:discord.Message):
         return
     
     # 読み上げ
-    if gManager.is_connected(message.channel.guild):
+    if await gManager.is_connected(message.channel.guild):
         text = myparser.parse(message)
         print(f"READ {datetime.now().strftime('%Y%m%d%H%M%S%f')}, guildName:{message.channel.guild.name}, text:{text}")
         filename = f"voice/message-{message.id}.wav"
