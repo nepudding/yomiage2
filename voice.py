@@ -55,13 +55,13 @@ class MyGuild():
 
     async def playPafy(self, music, after=None):
         audio = music.getbestaudio()
+        self.vClient.play(discord.FFmpegPCMAudio(audio.url, **FFMPEG_OPTIONS), after=after)
         embed=discord.Embed(title="NOW PLAYING!")
         embed.set_thumbnail(url=music.thumb)
         embed.add_field(name="title", value=music.title, inline=True)
         embed.add_field(name="url", value=f"https://www.youtube.com/watch?v={music.videoid}", inline=True)
         embed.add_field(name="play time", value=music.duration, inline=True)
         await self.textCh.send(embed=embed)
-        self.vClient.play(discord.FFmpegPCMAudio(audio.url, **FFMPEG_OPTIONS), after=after)
 
 class GuildManager():
     def __init__(self):
