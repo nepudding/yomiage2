@@ -77,5 +77,4 @@ async def on_reaction_add(reaction, user):
 
 if __name__ == "__main__":
     token = os.environ.get("YOMIAGE_TOKEN")
-    print(token)
     client.run(token)
