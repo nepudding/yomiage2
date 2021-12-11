@@ -2,7 +2,6 @@ import pyvcroid2
 
 class akari:
     def __init__(self):
-        self.default = defaultParam()
         self.vc = pyvcroid2.VcRoid2()
         if "standard" in self.vc.listLanguages():
             self.vc.loadLanguage("standard")
@@ -16,6 +15,9 @@ class akari:
         self.vc.reloadWordDictionary(r"dict\user.wdic")
         self.vc.reloadPhraseDictionary(r"dict\user.pdic")
 
+        # 腹から声出す
+        self.vc.param.volume = self.vc.param.maxVolume
+
     def getVoiceList(self):
         return self.voice_list
     
@@ -25,14 +27,4 @@ class akari:
             f.write(speech)
         return filename
 
-class defaultParam:
-    def __init__(self):
-        self.volume = 2.00
-        self.speed = 1.25
-        self.pitch = 1.10
-        self.emphasis = 1.70
-        self.pauseMiddle = 150
-        self.pauseLong = 370
-        self.pauseSentence = 800
-        self.masterVolume = 1.20
         

@@ -2,11 +2,20 @@
 
 ## 使用方法
 検索・再生  
-```!p !play 【URL or 検索ワード】```  
+```
+!p {URL or 検索ワード}
+!play {URL or 検索ワード}
+```  
 スキップ  
-```!s !skip```  
+```
+!s 
+!skip
+```  
 切断  
-```!l !leave```  
+```
+!l
+!leave
+```
 
 ## 環境
 python3.9  
